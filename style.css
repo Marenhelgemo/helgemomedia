@@ -249,7 +249,7 @@ background: linear-gradient(to bottom, #f5e8b3 20%, /* lysere gull/beige */ #ffe
 /* ======================
    6. Debug Line
 ====================== */
-
+/*
 body::after {
   content: "";
   position: fixed;
@@ -259,7 +259,7 @@ body::after {
   width: 1px;
   z-index: 9999;
   pointer-events: none;
-}
+}*/
 
 /* Tilpassede WooCommerce-knapper */
 .woocommerce a.button,
