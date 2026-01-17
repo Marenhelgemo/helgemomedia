@@ -22,6 +22,8 @@ jobs:
           username: ${{ secrets.SFTP_USER }}
           password: ${{ secrets.SFTP_PASS }}
           port: ${{ secrets.SFTP_PORT }}
-          source: "*"
+          source: "./"
           target: ${{ secrets.SFTP_TARGET }}
           overwrite: true
+          # Her kan du bruke --exclude for å ekskludere .git
+          extra-args: "--exclude='.git/'"
