@@ -1,0 +1,34 @@
+name: Deploy Helgemo Media theme to one.com (SFTP)
+
+on:
+  push:
+    branches: ["main"]
+
+concurrency:
+  group: deploy-helgemomedia-theme
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy via SFTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.SFTP_HOST }}
+          username: ${{ secrets.SFTP_USER }}
+          password: ${{ secrets.SFTP_PASS }}
+          port: ${{ secrets.SFTP_PORT }}
+          protocol: sftp
+
+          local-dir: ./
+          server-dir: ${{ secrets.SFTP_SERVER_DIR }}
+
+          exclude: |
+            **/.git*
+            **/.github/**
+            **/node_modules/**
+            **/.DS_Store
+            **/*.map
