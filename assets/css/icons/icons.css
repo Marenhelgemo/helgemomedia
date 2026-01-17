@@ -1,0 +1,55 @@
+/* === Felles SVG-stil for kortene === */
+.info-card {
+    display: flex; 
+    flex-direction: column;
+    min-height: 100px;
+}
+.info-card svg {
+  display: block;
+  margin: 0 auto 1rem auto;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  transition: all 0.5s ease;
+}
+
+/* === Individuell animasjon for tannhjul === */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.info-card:hover .gear-icon {
+  animation: spin-slow 3s linear infinite;
+}
+
+/* === Wiggle-effekt for brukerikon === */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-4deg); }
+  75% { transform: rotate(4deg); }
+}
+.info-card:hover .users-icon {
+  animation: wiggle 0.6s ease-in-out;
+}
+
+.mail-icon {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem auto;
+  stroke: currentColor;
+  transition: transform 0.4s ease;
+}
+
+.info-card:hover .mail-icon {
+  animation: floatMail 1.5s ease-in-out infinite;
+}
+
+@keyframes floatMail {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}

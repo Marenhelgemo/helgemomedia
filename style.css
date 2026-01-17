@@ -1,0 +1,463 @@
+/*
+Theme Name: Helgemo Media
+Theme URI: https://helgemomedia.no
+Author: Helgemo Media
+Author URI: https://helgemomedia.no
+Description: Et tilpasset tema for Helgemo Media
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: helgemomedia
+*/
+
+/* ======================
+   1. Basis: Variabler & Normalisering
+====================== */
+
+:root {
+  --bg-color: #fdfdfd;
+  --text-color: #111;
+  --accent-color: #cc9900;
+  --heading-gradient: linear-gradient(to bottom, #f5e8b3 20%, #ffe9a3 40%, #b89b53 80%);
+  --button-text-color: #111; 
+   --button-bg-color: #ffecb3;
+  --glass-bg: rgba(255,255,255,0.12);
+  --glass-border: rgba(255,255,255,0.22);
+  --glass-shadow: 0 10px 30px rgba(0,0,0,0.18);
+  --text-color: #fff;
+  --link-hover-bg: rgba(255,255,255,0.10);
+  --active-bg: rgba(212,175,55,0.28);  /* gull-tint */
+ --active-text: #0d0d0d;
+  --active-border: rgba(212,175,55,0.45);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+.dark-theme {
+  --bg-color: #0d0d0d;
+  --text-color: #fff;
+  --accent-color: #cc9900;
+   --button-text-color: #f0f0f0;
+   --button-bg-color: #333;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  --glass-bg: rgba(255,255,255,0.08);
+  --glass-border: rgba(255,255,255,0.16);
+  --glass-shadow: 0 10px 30px rgba(0,0,0,0.26);
+  --text-color: #fff;
+  --link-hover-bg: rgba(255,255,255,0.10);
+ --active-gradient: linear-gradient(135deg, #FFD46B, #D4AF37, #A67C00);
+ --active-text: #fff;  
+  --active-border: rgba(212,175,55,0.45);
+}
+
+.dark-theme a {
+  color: var(--text-color);
+}
+
+.dark-theme a:hover {
+ color: var(--accent-color);
+}
+
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3 {
+  background: none;
+  -webkit-text-fill-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.light-page {
+  --bg-color: #fdfdfd;
+  --text-color: #fff;
+  --main-text-color: #9b8650;
+  --accent-color: #cc9900;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+    --glass-bg: rgba(0,0,0,0.06);
+  --glass-border: rgba(0,0,0,0.12);
+  --glass-shadow: 0 10px 30px rgba(0,0,0,0.10);
+  --text-color: #222;
+  --link-hover-bg: rgba(0,0,0,0.08);
+--active-gradient: linear-gradient(135deg, #FFD46B, #D4AF37, #A67C00);
+  --active-text: #111;
+  --active-border: rgba(212,175,55,0.38);
+}
+
+.light-page h1,
+.light-page h2,
+.light-page h3 {
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: var(--main-text-color); /* eller annen ønsket farge */
+  color: var(--main-text-color);
+}
+
+
+.light-page a {
+  color: var(--text-color);
+}
+
+.light-page a:hover {
+  color: var(--accent-color);
+}
+
+a {
+  color: var(--text-color);
+}
+a:hover {
+  color: var(--accent-color);
+}
+
+/* ======================
+   2. Layout & Struktur
+====================== */
+
+.container,
+.site-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.site-branding {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.site-title-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo img,
+.site-logo img {
+  height: auto;
+  max-height: 50px;
+  width: auto;
+  display: block;
+}
+
+.custom-logo-link {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* ======================
+   3. Typografi
+====================== */
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
+  font-weight: 520;
+  margin: 0;
+  background: var(--heading-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  color: #fff;
+}
+
+h1::after {
+  content: attr(data-heading) "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  text-shadow: 
+    -1px 0 1px #c6bb9f, 
+    0 1px 1px #c6bb9f, 
+    5px 5px 10px rgba(0, 0, 0, 0.4),
+    -5px -5px 10px rgba(0, 0, 0, 0.4);
+}
+
+h1 { font-size: 3rem; line-height: 1.2; }
+h2 { font-size: 2rem; line-height: 1.3; }
+h3 { font-size: 1.5rem; line-height: 1.4; }
+
+/* ======================
+   4. Logo
+====================== */
+
+.site-title {
+  font-size: 1.8rem;
+background: linear-gradient(to bottom, #f5e8b3 20%, /* lysere gull/beige */ #ffe9a3 40%, /* varm, lys gull */ #b89b53 80% /* myk, men lesbar bunnfarge */ ); -webkit-background-clip: text; -webkit-text-fill-color: transparent; color: #fff; margin-left: 1rem; text-decoration: none; display: inline-block; vertical-align: middle; }
+
+/* ======================
+   5. Knappestiler
+====================== */
+.light-page .btn-1 {
+  color: var(--button-text-color);
+}
+.btn-1 {
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
+/* SVG knapp */
+.btn-1 {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 60px;
+  background: none;
+  border: none;
+  --button-text-color: #111; 
+}
+
+.btn-1 .btn-border {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-1 rect {
+  fill: none;
+  stroke: #cfc09f;
+  stroke-width: 2;
+  stroke-dasharray: 350, 0;
+  transition: all 0.6s ease-in-out;
+}
+
+.btn-1:hover rect {
+  stroke-width: 3;
+  stroke-dasharray: 25, 300;
+  stroke-dashoffset: 40;
+}
+
+/* ======================
+   6. Debug Line
+====================== */
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* Tilpassede WooCommerce-knapper */
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+    background-color: black;
+    color: #fff;
+    font-size: 18px;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Butikkside: gjør produktkolonner smalere */
+.woocommerce ul.products li.product {
+    width: 22%; /* gjør produktene mindre */
+    margin: 1%; /* legg til spacing mellom */
+    
+}
+
+/* Legg til padding på butikksiden */
+.woocommerce ul.products {
+    padding-left: 20%;
+    padding-right: 20%;
+}
+/* Gjør add-to-cart-knappen like bred som produktkortet */
+.woocommerce ul.products li.product .button {
+  display: block;          /* gjør knappen blokk */
+  width: 100%;             /* fyller hele bredden */
+  box-sizing: border-box;  /* inkluder padding i bredden */
+  text-align: center;      /* sentrer teksten */
+  margin-top: 8px;         /* liten avstand fra pris */
+}
+
+/* Valgfritt: legg til litt ekstra padding og radius */
+.woocommerce ul.products li.product .button {
+  padding: 12px;
+  border-radius: 20px;
+}
+/* Ikon i navbar */
+.nav-cart{ position:relative; display:inline-flex; align-items:center; gap:.4rem; text-decoration:none; }
+.nav-cart__icon{ font-size:1.1rem; line-height:1; }
+.nav-cart__count{
+  display:inline-block; min-width:1.3em; padding:.15em .45em;
+  border-radius:999px; font-size:.75rem; line-height:1; text-align:center;
+  background:#111; color:#fff;
+}
+
+/* ===========================
+   NAVBAR-IKON + BADGE (🛒)
+   =========================== */
+
+.nav-cart{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  text-decoration: none;
+  line-height: 1;
+  /* Øk klikkflate uten å forstyrre layout */
+  padding: .25rem .35rem;
+}
+
+.nav-cart__icon{
+  font-size: 1.15rem; /* juster ikon-størrelse */
+  line-height: 1;
+}
+
+/* Badge (antall i kurv) */
+.nav-cart__count{
+  display: inline-block;
+  min-width: 1.35em;
+  padding: .18em .5em;
+  border-radius: 999px;
+  font-size: .75rem;
+  line-height: 1;
+  text-align: center;
+  background: #111;   /* ← bytt til din primærfarge om ønskelig */
+  color: #fff;
+}
+
+/* Alternativ: legg badgen oppå ikonet (kommenter ut hvis du ikke vil) */
+/*
+.nav-cart{ padding-right: .75rem; }
+.nav-cart__count{
+  position: absolute; top: -6px; right: -6px;
+  padding: .18em .45em;
+}
+*/
+
+/* Fokus (tilgjengelighet) */
+.nav-cart:focus-visible,
+.mini-cart__close:focus-visible,
+.mini-cart a.button:focus-visible{
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+
+/* ===========================
+   OVERLAY + DRAWER (SIDEPANEL)
+   =========================== */
+
+/* Mørk bakgrunn bak panelet */
+#mini-cart-overlay{
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease;
+  z-index: 9998; /* over alt innhold */
+}
+
+/* Selve panelet */
+.mini-cart{
+  position: fixed;
+  top: 0; right: 0;
+  height: 100vh;
+  width: 380px;          /* desktop-bredde */
+  max-width: 92vw;       /* små skjermer */
+  background: #fff;
+  box-shadow: -10px 0 30px rgba(0,0,0,.18);
+  transform: translateX(100%); /* skjult utenfor skjerm */
+  transition: transform .25s ease;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Åpen tilstand (settes av JS) */
+body.mini-cart-open #mini-cart{ transform: none; }
+body.mini-cart-open #mini-cart-overlay{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Toppseksjon */
+.mini-cart__close{
+  background: none;
+  border: 0;
+  font-size: 28px;
+  line-height: 1;
+  padding: 12px;
+  cursor: pointer;
+}
+.mini-cart__title{
+  margin: 0 16px 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* Innhold (selve minikurven) */
+.mini-cart__body{
+  padding: 0 16px 12px;
+  overflow: auto;
+  flex: 1;
+}
+
+/* WooCommerce mini-cart standardtilpasning */
+.mini-cart__body .woocommerce-mini-cart{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.mini-cart__body .woocommerce-mini-cart-item{
+  display: grid;
+  grid-template-columns: 64px 1fr auto; /* bilde – info – pris */
+  gap: 10px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+.mini-cart__body .remove_from_cart_button{
+  color: inherit;
+  opacity: .7;
+}
+.mini-cart__body .remove_from_cart_button:hover{
+  opacity: 1;
+}
+
+/* Bunnknapper */
+.mini-cart__actions{
+  display: flex;
+  gap: 10px;
+  padding: 16px;
+  border-top: 1px solid #eee;
+}
+.mini-cart__actions .button{
+  flex: 1;
+  text-align: center;
+  padding: 12px 14px;
+}
+
+/* Responsiv tweak (valgfritt) */
+@media (max-width: 480px){
+  .mini-cart{ width: 340px; }
+}
+
+/* Hjelp mot “fullbredde”-blokker som kan bråke bak panelet */
+.woocommerce .alignfull{ margin-left: 0; margin-right: 0; }

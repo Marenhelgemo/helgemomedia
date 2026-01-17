@@ -1,0 +1,126 @@
+
+.site-footer {
+   background-color:  #0d0d0d;
+  color: #fff;
+  padding-top: 3%;
+  font-size: 0.9rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 20%;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+width: auto;
+}
+
+
+/* Instagram feed */
+.instagram-feed {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.insta-post {
+  background: #222;
+  aspect-ratio: 1 / 1;
+}
+
+/* Sosiale medier ikoner */
+.social-icons a {
+  color: #ccc;
+  margin-right: 0.75rem;
+  font-size: 1.25rem;
+  transition: color 0.3s ease;
+}
+.social-icons a:hover {
+  color: #ffcc66;
+}
+
+/* Kontaktinfo */
+.contact-info {
+  list-style: none;
+  padding: 0;
+}
+.contact-info li {
+  margin-bottom: 0.5rem;
+}
+.contact-info a {
+  color: #ccc;
+  text-decoration: none;
+}
+.contact-info a:hover {
+  color: #ffcc66;
+}
+
+/* Footer-meny */
+.footer-menu {
+  list-style: none;
+  padding: 0;
+}
+.footer-menu li {
+  margin-bottom: 0.5rem;
+}
+.footer-menu a {
+  color: #ccc;
+  text-decoration: none;
+}
+.footer-menu a:hover {
+  color: #ffcc66;
+}
+
+/* Bunntekst */
+
+.footer-upper {
+   border-top: 1px solid #000; 
+  padding-top: 2%;
+   margin: 16px auto;
+  width: 70%;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid #333;
+  padding-top: 1rem;
+  font-size: 0.85rem;
+}
+
+/* H3-styling for lik linje */
+.footer-grid h3 {
+  font-family: 'Playfair Display', serif;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+
+/* Responsive: stack columns vertically on smaller screens */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    min-width: auto;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .instagram-feed {
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -1,0 +1,86 @@
+/* Helgemo Media – Landing base */
+.hm-landing {
+  padding: clamp(24px, 4vw, 56px) 16px;
+}
+
+.hm-landing__container {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.hm-landing__header {
+  margin-bottom: 14px;
+}
+
+.hm-landing__title {
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.hm-landing__content h2 {
+  font-size: clamp(18px, 2.2vw, 22px);
+  line-height: 1.25;
+  margin: 28px 0 10px;
+}
+
+.hm-landing__content p {
+  line-height: 1.65;
+  margin: 0 0 14px;
+}
+
+.hm-landing__content ul {
+  padding-left: 1.2em;
+  margin: 0 0 16px;
+}
+
+.hm-landing__content li {
+  margin: 0 0 8px;
+}
+
+/* Calm card */
+.hm-card {
+  border: 1px solid rgba(0,0,0,0.10);
+  border-radius: 16px;
+  padding: 18px;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(6px);
+}
+
+/* Button */
+.hm-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid rgba(0,0,0,0.12);
+}
+
+.hm-btn:hover { transform: translateY(-1px); }
+.hm-btn:active { transform: translateY(0); }
+
+.hm-btn--primary {
+  background: rgba(0,0,0,0.92);
+  color: #fff;
+}
+
+/* Chips */
+.hm-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 18px;
+}
+
+.hm-chip {
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 13px;
+  opacity: 0.9;
+}
