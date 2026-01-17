@@ -22,17 +22,6 @@ jobs:
           username: ${{ secrets.SFTP_USER }}
           password: ${{ secrets.SFTP_PASS }}
           port: ${{ secrets.SFTP_PORT }}
-          source: |
-            assets/**
-            inc/**
-            templates/**
-            woocommerce/**
-            *.php
-            style.css
-            screenshot.png
-            theme.json
-            readme.md
-            !.git/**
-            !.github/**
+          source: "*"
           target: ${{ secrets.SFTP_TARGET }}
           overwrite: true
