@@ -21,7 +21,7 @@ jobs:
           username: ${{ secrets.SFTP_USER }}
           password: ${{ secrets.SFTP_PASS }}
           port: ${{ secrets.SFTP_PORT }}
-          protocol: ftp  # endret fra sftp til ftp
+          protocol: ftps  # endret fra sftp til ftp
 
           local-dir: ./
           server-dir: ${{ secrets.SFTP_SERVER_DIR }}
